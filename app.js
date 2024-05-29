@@ -4,6 +4,7 @@ const postToInstagram=require('./post')
 const editImage = require('./editImage');
 const news = require('./news');
 
+function satisfy(){
 async function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -46,6 +47,9 @@ const keepAlive = () => {
   setTimeout(keepAlive, 1000);
 };
 keepAlive();
-
+}
+module.exports={
+satisfy
+}
 
 
