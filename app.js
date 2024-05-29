@@ -5,6 +5,7 @@ const editImage = require('./editImage');
 const news = require('./news');
 
 function satisfy(){
+    console.log("We are inside Satisfy function")
 async function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
