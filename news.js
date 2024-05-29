@@ -37,14 +37,14 @@ module.exports={
     getNewsHeadlines
 }
 
-async function main() {
-    const headlines = await getNewsHeadlines(30);
-    k=1
-    headlines.forEach(element => {
-        // console.log(element);
-        console.log(k)
-        k+=1
-    });
-}
+// async function main() {
+//     const headlines = await getNewsHeadlines(30);
+//     k=1
+//     headlines.forEach(element => {
+//         // console.log(element);
+//         console.log(k)
+//         k+=1
+//     });
+// }
 
-main();
+// main();
