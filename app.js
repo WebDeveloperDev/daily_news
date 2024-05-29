@@ -12,7 +12,7 @@ async function sleep(ms) {
 async function main(start,end) {
     
     let newsList=await news.getNewsHeadlines()
-    for (start;i<end;i++){
+    for (let i=start;i<end;i++){
         let newsObj=newsList[i]
         let imgUrl=newsObj.imgUrl
         let heading=newsObj.title
@@ -35,11 +35,13 @@ async function main(start,end) {
 
 // Schedule task at 6 AM every day
 cron.schedule('0 6 * * *', () => {
+console.log("its 6 am")
     main(0,10)
 });
 
 // Schedule task at 6 PM every day
 cron.schedule('0 18 * * *', () => {
+console.log("its 6 pm")
   main(10,20)
 });
 
