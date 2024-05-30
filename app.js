@@ -40,8 +40,8 @@ cron.schedule('0 6 * * *', () => {
 });
 
 // Schedule task at 6 PM every day
-cron.schedule('3 19 * * *', () => {
-    console.log("its 19:00");
+cron.schedule('0 17 * * *', () => {
+    console.log("its 17:00");
     main(10, 20);
 });
 
