@@ -1,13 +1,9 @@
+// main.js
 const fs = require("fs");
 const cron = require('node-cron');
-const express = require('express');
-const axios = require('axios');
 const postToInstagram = require('./post');
 const editImage = require('./editImage');
 const news = require('./news');
-
-const app = express();
-const port = process.env.PORT || 3000;  // Use the PORT environment variable provided by Render
 
 async function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -34,29 +30,4 @@ async function main(start, end) {
     }
 }
 
-// Schedule task at 6 AM every day
-cron.schedule('0 6 * * *', () => {
-    main(0, 10);
-});
-
-// Schedule task at 6 PM every day
-cron.schedule('0 17 * * *', () => {
-    console.log("its 17:00");
-    main(10, 20);
-});
-
-// Dummy server to keep Render happy
-app.get('/', (req, res) => {
-    res.send('Background worker is running');
-});
-
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
-});
-
-// Periodic ping to keep the app awake
-setInterval(() => {
-    axios.get(`http://localhost:${port}`)
-        .then(() => console.log('Pinged self to stay awake'))
-        .catch((err) => console.error('Error pinging self:', err));
-}, 5 * 60 * 1000); // Ping every 5 minutes
+module.exports = main;

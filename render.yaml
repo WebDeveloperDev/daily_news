@@ -1,6 +1,0 @@
-services:
-  - type: worker
-    name: daily_news
-    env: node
-    buildCommand: 'npm install'
-    startCommand: 'app.js'
