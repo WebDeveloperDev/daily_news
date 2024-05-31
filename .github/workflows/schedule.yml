@@ -2,7 +2,7 @@ name: Scheduled Node.js Job
 
 on:
   schedule:
-    - cron: '36 5 * * *' # Runs at 6:00 AM UTC every day
+    - cron: '52 5 * * *' # Runs at 6:00 AM UTC every day
     - cron: '0 19 * * *' # Runs at 7:00 PM UTC every day
 
 jobs:
@@ -22,7 +22,7 @@ jobs:
         run: npm install
 
       - name: Run the script for 6 AM task
-        if: github.event.schedule == '36 5 * * *'
+        if: github.event.schedule == '52 5 * * *'
         run: node -e 'require("./app").main(0,10)'
 
       - name: Run the script for 7 PM task
