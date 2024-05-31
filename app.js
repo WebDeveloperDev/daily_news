@@ -22,7 +22,7 @@ async function main(start, end) {
             let status = await editImage.editImage(imgUrl, heading);
             if (status == true) {
                 await postToInstagram.post('./images/output.jpeg', description);
-                await sleep(60 * 1000);
+                await sleep(5*60 * 1000);
             }
             console.log(i);
             console.log("---------------------------------------------");
