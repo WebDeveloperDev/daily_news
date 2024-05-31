@@ -30,4 +30,4 @@ async function main(start, end) {
     }
 }
 
-module.exports = main;
+module.exports = {main};
