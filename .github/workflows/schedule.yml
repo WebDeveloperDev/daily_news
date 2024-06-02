@@ -21,10 +21,10 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run the script for 7 AM task
-        if: github.event.schedule == '30 1 * * *'
-        run: node -e 'require("./app").main(0,10)'
+      # - name: Run the script for 7 AM task
+      #   if: github.event.schedule == '30 1 * * *'
+      #   run: node -e 'require("./app").main(0,10)'
 
-      - name: Run the script for 6 PM task
-        if: github.event.schedule == '30 12 * * *'
-        run: node -e 'require("./app").main(10,20)'
+      # - name: Run the script for 6 PM task
+      #   if: github.event.schedule == '30 12 * * *'
+      #   run: node -e 'require("./app").main(10,20)'
