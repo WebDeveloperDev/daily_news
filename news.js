@@ -5,7 +5,7 @@ async function getNewsHeadlines(limit) {
     const api_key = "732f121d0b66458bac3fb5bf326db1e3";
     
     // URL for top headlines endpoint
-    const url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=${api_key}`;
+    const url = `https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=${api_key}`;
 
     try {
         const response = await axios.get(url);
